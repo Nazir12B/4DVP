@@ -2,10 +2,11 @@ name: Manual trigger
 on:
   workflow_dispatch:
     inputs:
-     username:
-        description: "Here's username"
-        type: string
-        default: "Your username"
+      string_input:
+        username:
+          description: "Here's username"
+          type: string
+          default: "Your username"
 
       level:
         description: "Here's level"
