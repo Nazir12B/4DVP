@@ -2,27 +2,25 @@ name: Manual trigger
 on:
   workflow_dispatch:
     inputs:
-      string_input:
-        username:
-          description: "Here's username"
-          type: string
-          default: "Your username"
+     username:
+        description: "Nom d'utilisateur"
+        requred: true
+        type: string
+        default: "Nazir"
 
       level:
-        description: "Here's level"
+        description: "Classe de personnage"
         type: string
-        default: "Your level"
+        default: "1"
 
       class:
         description: "Hers's class choice"
         default: "Jedi"
         type: choice
-        options:
-          - Jedi
-          - Sith
-          - Rebel
+        options: ["Jedi","Sith","Rebel"]
+        
 jobs:
-  log-the-inputs:
+  player_info:
     runs-on: ubuntu-latest
     steps:
       - run: |
