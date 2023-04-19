@@ -2,10 +2,9 @@ name: Manual trigger
 on:
   workflow_dispatch:
     inputs:
-     username:
-        description: "Nom d'utilisateur"
-        requred: true
-        type: string
+      description: "Nom d'utilisateur"
+      requred: true
+      type: string
 
       level:
         description: "Classe de personnage"
