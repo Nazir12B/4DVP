@@ -1,26 +1,25 @@
-name: Manual trigger
-on:
-  workflow_dispatch:
-    inputs:
-      description: "Nom d'utilisateur"
-      requred: true
-      type: string
+name: WorkFlow 3.1 
 
-      level:
-        description: "Classe de personnage"
-        type: string
-        requred: true
+on: 
+  workflow_dispatch: 
+    inputs: 
+      username: 
+        description: "Nom d'utilisateur" 
+        required: true
+    
+      level: 
+        description: "Niveau" 
+        required: true 
 
+      class: 
+        description: "Classe de personnage" 
+        required: true 
+        options: ["jedi", "sith", "rebel"] 
+        type: choice 
 
-      class:
-        description: "Hers's class choice"
-        requred: true
-        type: choice
-        options: ["Jedi","Sith","Rebel"]
-        
-jobs:
-  player_info:
-    runs-on: ubuntu-latest
-    steps:
-      - run: |
-          echo " Le joueur ${{ inputs.username }} est de niveau ${{ inputs.level }} et joue un ${{ inputs.class }}"
+jobs: 
+  player_infos: 
+    runs-on: windows-latest 
+    steps: 
+    - name: Afficher les informations sur le joueur 
+    run: echo "Le joueur ${{ github.event.inputs.username }} est de niveau ${{ github.event.inputs.level }} et joue un ${{ github.event.inputs.class }}."
