@@ -6,16 +6,16 @@ on:
         description: "Nom d'utilisateur"
         requred: true
         type: string
-        default: "Nazir"
 
       level:
         description: "Classe de personnage"
         type: string
-        default: "1"
+        requred: true
+
 
       class:
         description: "Hers's class choice"
-        default: "Jedi"
+        requred: true
         type: choice
         options: ["Jedi","Sith","Rebel"]
         
