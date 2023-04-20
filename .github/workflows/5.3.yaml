@@ -21,8 +21,8 @@ jobs:
   steps:
     - name: "Affiche les valeur"
       run: |
-      echo "HOST=${{ needs.setup_host.outputs.host}}"
-      echo "DATABASE=${{ needs.setup_host.outputs.database}}"
+        echo "HOST=${{ needs.setup_host.outputs.host}}"
+        echo "DATABASE=${{ needs.setup_host.outputs.database}}"
 
 
 
