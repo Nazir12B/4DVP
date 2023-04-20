@@ -16,13 +16,13 @@ jobs:
         echo "DATABASE=prep002" >> $GITHUB_OUTPUT
 
   display_infos:
-  runs-on: ubuntu-latest
   needs: prepare_tests
+  runs-on: ubuntu-latest
   steps:
     - name: "Affiche les valeur"
       run: |
-        echo "HOST=${{ needs.setup_host.outputs.host}}"
-        echo "DATABASE=${{ needs.setup_host.outputs.database}}"
+        echo "HOST=${{ needs.prepare_tests.outputs.host}}"
+        echo "DATABASE=${{ needs.prepare_tests.outputs.database}}"
 
 
 
