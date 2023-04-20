@@ -1,0 +1,14 @@
+name: information_dsplay
+
+on: 
+  push
+
+jobs:
+  information_display:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Notice"
+        run: |
+          echo "Ceci est une notice."
+          echo "::warning:: Ceci est un avertissement."
+          echo "::error:: Une erreur est survenue."

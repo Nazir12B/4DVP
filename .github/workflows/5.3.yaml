@@ -1,0 +1,29 @@
+name: job outpus
+on :
+  push
+
+jobs:
+  prepare_tests:
+  runs-on: ubuntu-latest
+  outputs:
+    host: ${{steps.setup_host.outputs.HOST}}
+    database: ${{steps.setup_host.outputs.DATABASE}}
+  steps:
+    -name: Set UP HOST
+      id: setup_host
+      run: |
+        echo "HOST=srv1" >> $GITHUB_OUTPUT
+        echo "DATABASE=prep002" >> $GITHUB_OUTPUT
+        
+  display_infos:
+  needs: setup_host
+  runs-on: ubuntu-latest
+  steps:
+    -name: "Affiche les valeur"
+      run: |
+      echo "HOST=${{ needs.setup_host.outputs.host}}"
+      echo "DATABASE=${{ needs.setup_host.outputs.database}}"
+
+
+
+
